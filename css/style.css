@@ -37,12 +37,45 @@ input[type=number]:focus,
     height: 100px;
 }
 
+.desktop_nav nav {
+  margin: 0px 30px;
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle-bar {
+  color: var(--base_green);
+  font-size: 23px;
+}
+
 .nav_links a {
   text-decoration: none;
   color: #fff;
   font-size: 19px;
   margin: 10px 20px;
   transition: .2s ease-in;
+}
+
+/* ------- Blur ------- */
+#overlay    {
+  position: fixed;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  transition: .3s ease-in;
+  display: none;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+}
+
+/* ------- Blur ------- */
+
+.hide {
+  display: none !important;
 }
 
 .nav_links a:hover {
@@ -56,9 +89,61 @@ input[type=number]:focus,
   box-shadow: 1px 1px 3px var(--base_green), 0 0 25px rgb(159, 255, 132), 0 0 5px rgb(16, 117, 0);
 }
 
-.nav_links .active {
+.nav_links .active, .phone_nav_links .active {
   color: var(--base_green);
 }
+
+/* --------- Phone navbar ------------ */
+
+.phone_navbar {
+  z-index: 1900;
+  top: 0;
+  right: -150%;
+  position: fixed;
+  background-color: var(--base_black);
+  color: #fff;
+  height: 100vh;
+  width: 70%;
+  border-left: 4px solid var(--base_green);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: 1px 1px 3px var(--base_green), 0 0 25px rgb(159, 255, 132), 0 0 5px rgb(16, 117, 0);
+  padding: 30px 30px;
+  transition: .4s ease-in-out;
+}
+
+.inner img {
+  width: 200px;
+  height: auto;
+}
+
+.phone_nav_links {
+  margin-top: 80px;
+}
+
+.phone_nav_links a {
+  text-decoration: none;
+  width: 200px;
+  height: 30px;
+  color: #fff;
+  font-size: 19px;
+  margin: 20px 0px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-weight: 500;
+  transition: .3s ease-in;
+  border-bottom: 1px solid var(--base_green);
+  border-bottom: 1px solid var(--base_green);
+}
+
+#back_btn {
+  font-size: 32px;
+  color: var(--base_green);
+}
+
+
+
+/* --------- Phone navbar ------------ */
 
 /* ------------- Navbar ------------- */
 

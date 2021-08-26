@@ -1,8 +1,6 @@
-
-
-if (window.outerWidth < 1024) {
-    document.getElementById('logo_img').src = "../img/logo/logo_main.png";
-};
+// if (window.outerWidth < 1024) {
+//     document.getElementById('logo_img').src = "../img/logo/logo_main.png";
+// };
 
 document.getElementById('toggle_btn').addEventListener('click', () => {
     document.getElementById('phone_nav').style.right = 0;

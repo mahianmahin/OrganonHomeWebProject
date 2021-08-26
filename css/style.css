@@ -405,10 +405,16 @@ input[type=number]:focus,
   margin-top: 100px;
 }
 
-
-
-
-
-
-
 /* ============= Blogs page ============= */
+
+/* ============= About page ============ */
+
+.first_section_about {
+  margin-top: 150px;
+}
+
+
+
+
+
+/* ============= About page ============ */

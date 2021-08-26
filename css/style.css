@@ -354,3 +354,61 @@ input[type=number]:focus,
 }
 
 /* ============== Contact page ============ */
+
+/* ============= Blogs page ============= */
+
+.post {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.author_info {
+  background: var(--base_black);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  padding: 20px 25px;
+}
+
+.author_info img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.datetime {
+  color: rgb(175, 175, 175);
+  font-size: 14px;
+}
+
+.admin {
+  font-size: 12px;
+  border: 2px solid var(--base_green);
+  width: 60px;
+  padding: 1px 10px;
+  color: var(--base_green);
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.post-text {
+  text-align: justify;
+}
+
+.first_post {
+  margin-top: 100px;
+}
+
+
+
+
+
+
+
+/* ============= Blogs page ============= */

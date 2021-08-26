@@ -47,4 +47,18 @@
         height: 80px;
       }
 
+    .author_info img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 377px) {
+    .author_info img {
+        margin-left: 10px;
+    }
+
+    .author_info {
+        padding: 20px 10px;
+    }
 }

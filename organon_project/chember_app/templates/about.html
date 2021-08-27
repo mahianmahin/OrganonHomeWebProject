@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} OrganonHomeoChember | About {% endblock %}
+
+{% block content %}
+    
+    <section class="first_section_about">
+        <div class="container my-5 px-3">
+        {% for item in about_db %}
+            <div class="my-5">
+            <h1 class="style_bangla">{{ item.heading }}</h1>
+            <div class="bangla-font about-text">
+                {{ item.description | safe }}                
+            </div>
+            </div>
+        {% endfor %}
+
+        </div>
+    </section>
+
+
+   {% endblock %}

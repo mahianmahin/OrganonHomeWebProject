@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} OrganonHomeoChember | Blogs {% endblock %}
+
+{% block content %}
+
+    <!-- ================ Blog post section ==================== -->
+
+    <section class="first_post">
+        <div class="container my-5 d-flex flex-column justify-content-center">
+        {% for blog in blogs_db %}
+            <div class="post my-5 shadow">
+                <div class="author_info d-flex flex-row flex-wrap justify-content-start">
+                    <img src={{ blog.author.profile_picture.url }}>
+                    <div class="d-flex flex-column justify-content-center mx-3">
+                        <span class="name style_bangla" style="font-size: 20px">{{ blog.author.name }}</span>
+                        <span class="datetime">Published on {{ blog.published_date }}</span>
+                        <span class="admin">Admin</span>
+                    </div>
+                </div>
+                <div class="post-body py-4 px-4 bangla-fonts">
+                    <h3 class="style_bangla post-heading my-5">{{ blog.heading }}</h3>
+                    {% if blog.image %}
+                    <img src={{ blog.image.url }} class="img-fluid">
+                    {% endif %}
+                    <div class="post-text my-5 bangla-font">
+                        {{ blog.description | safe }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+            
+        </div>
+    </section>
+
+   <!-- ================ Blog post section ==================== -->
+
+{% endblock %} 

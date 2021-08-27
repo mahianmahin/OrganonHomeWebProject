@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} OrganonHomeoChember | Home {% endblock %}
+
+{% block content %}
+
+    <!-- =========== Intro section ========== -->
+    <section class="first_section">
+        <div class="container d-flex flex-column">
+        {% for doctor in doctor_info %}
+            <div class="intro">
+                <div class="avatar">
+                    {% comment %} <img src="{% static 'img/avatar/avatar_placeholder.png' %}"> {% endcomment %}
+                    <img src={{ doctor.profile_picture.url }}>
+                </div>
+
+                <div class="name d-flex flex-column mx-5 my-3 style_bangla">
+                    <h1 style="font-weight: bold;">{{ doctor.name }}</h1>
+                    <span class="designation bangla-font">{{ doctor.certification }}</span>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+    <!-- =========== Intro section ========== -->    
+    
+    <!-- =========== Text section ========== -->
+
+    <section class="my-5 mx-3">
+        <div class="container text-section">
+            <h1 class="style_bangla " style="font-weight: bold;">কিছু <span class="green_span">কথা</span></h1>
+            {% for utils in site_utils %}
+            <div class="bangla-font">
+                {{ utils.Home_page_text | safe }}
+            </div>
+            {% endfor %}
+    </section>
+    
+    
+    <!-- =========== Text section ========== -->
+
+    <!-- ============= Treatments section ================ -->
+    <section class="my-5 py-5 px-3 treatments">
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="text-white style_bangla">চিকিৎসা <span class="green_span">সমূহ</span></h1>
+            <div class="d-flex flex-row flex-wrap justify-content-between align-items-center bangla-font mt-5">
+            {% for treatment in treatment %}
+                <div class="treatment_card d-flex justify-content-center align-items-center">{{ treatment.treatment_type }}</div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ============= Treatments section ================ -->
+
+    <!-- ============== Subscription section =============== -->
+
+    <section class="my-5 mx-3 subscription">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="subscription_card shadow-lg d-flex flex-column justify-content-center align-items-center">
+                <h1 class="text-center style_bangla">সাবস্ক্রাইব <span class="green_span">করুন</span></h1>
+                <div class="bangla-font text-center my-3">
+                    <p>প্রতিনিয়ত ব্লগ পোস্টের আপডেট পেতে সাবস্ক্রাইব করুন</p>
+                </div>
+
+                <div class="subscription_form my-5 bangla-font">
+                    <form class="form-group" method="POST">
+                    {% csrf_token %}
+                        <input type="email" placeholder="ইমেল অ্যাড্রেস" id="input_field" class="form-control" name="email" required>
+                        <input class="style_bangla" type="submit" value="সাবস্ক্রাইব" id="subs_btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== Subscription section =============== -->
+
+{% endblock content %}

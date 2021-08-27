@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} OrganonHomeoChember | Contact & Support {% endblock %}
+
+{% block content %}
+    <!-- ================ Contact section ===================== -->
+
+    <section class="contact first_section">
+        <div class="container my-3">
+            <div class="row">
+                <h1 class="text-center style_bangla">যোগাযোগ <span class="green_span">করুন</span></h1>
+
+                {% for doctor in doctor_info %}
+                <div class="col-sm-6 d-flex flex-column justify-content-start align-items-center contact_card my-5 shadow text-center">
+                    <div class="my-3 d-flex flex-column align-items-center">
+                        <h2 class="style_bangla">{{ doctor.name }}</h2>
+                        <span class="designation bangla-font">{{ doctor.certification }}</span>
+                        <span><i class="fas fa-clinic-medical" id="icon_contact"></i> &nbsp; Arganon Homeo Chember</span>
+                    </div>
+                    <span><i class="fab fa-whatsapp" id="icon_contact"></i> &nbsp; +880 {{ doctor.phone_number }}</span>
+                    <span><i class="fas fa-envelope" id="icon_contact"></i> &nbsp; {{ doctor.mail_address }}</span>
+
+                    <div class="my-3 bangla-font" style="width: 80%">
+                        <span style="font-size: 16px;"><i class="fas fa-map-marked-alt" id="icon_contact"></i> &nbsp; {{ doctor.chember_location }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="col-sm-6 d-flex justify-content-center align-items-center my-5">
+                    <form class="form-group contact-form" method="POST">
+                    {% csrf_token %}
+                        <input class="bangla-font" type="text" class="form-control" placeholder="আপনার নাম" name="name" required>
+                        <input class="bangla-font" type="email" class="form-control" placeholder="আপনার ইমেল অ্যাড্রেস" name="email" required>
+                        <input class="bangla-font" type="number" class="form-control" placeholder="আপনার ফোন নম্বর" name="phone" required>
+                        <textarea class="form-control" cols="30" rows="10" placeholder="আপনার বক্তব্য" name="message" required></textarea>
+
+                        <input class="style_bangla submit_contact_form" type="submit" value="সাবমিট">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% comment %} Google map link {% endcomment %}
+
+    <section class="my-3">
+        <div class="container w-100">
+        {% for utils in site_utils %}
+            {{ utils.google_map_embed_link | safe }}
+        {% endfor %}
+        </div>
+    </section>
+
+{% comment %} Google map link {% endcomment %}
+
+
+    <!-- ================ Contact section ===================== -->
+
+
+{% endblock %}
